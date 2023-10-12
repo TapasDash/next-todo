@@ -33,12 +33,12 @@ const page = () => {
       {/* w-fit i.e width: fit-content; property is used to make an element's width
       automatically adjust to the content it contains. This means the element
       will be as wide as its content, and it won't expand beyond that width. */}
-      <buttton
+      <button
         type="submit"
         className="bg-green-600 font-bold text-white py-3 px-6 w-fit cursor-pointer rounded"
       >
         Add Topic
-      </buttton>
+      </button>
     </form>
   );
 };
