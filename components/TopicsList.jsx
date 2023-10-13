@@ -35,11 +35,11 @@ const TopicsList = () => {
             key={`${_id}`}
             className="p-4 border border-slate-300 flex justify-between my-3 gap-5"
           >
-            <div>
+            <div key={`${_id}`}>
               <h2 className="font-bold text-2xl">{title}</h2>
               <div>{description}</div>
             </div>
-            <div className="flex gap-2 items-start">
+            <div key={`${_id}`} className="flex gap-2 items-start">
               <RemoveBtn />
               <Link href={`/editTopic/${_id}`}>
                 <HiPencilAlt size={24} />
