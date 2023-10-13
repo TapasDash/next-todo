@@ -27,7 +27,10 @@ const TopicsList = async () => {
   return (
     <>
       {topics.map(({ title, description, _id }) => (
-        <main className="p-4 border border-slate-300 flex justify-between my-3 gap-5">
+        <main
+          key={_id}
+          className="p-4 border border-slate-300 flex justify-between my-3 gap-5"
+        >
           <div>
             <h2 className="font-bold text-2xl">{title}</h2>
             <div>{description}</div>
