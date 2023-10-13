@@ -32,7 +32,7 @@ const TopicsList = () => {
       {topics.length &&
         topics.map(({ title, description, _id }) => (
           <main
-            key={_id}
+            key={`${_id}`}
             className="p-4 border border-slate-300 flex justify-between my-3 gap-5"
           >
             <div>
