@@ -2,20 +2,21 @@ import React from "react";
 import RemoveBtn from "./RemoveBtn";
 import Link from "next/link";
 import { HiPencilAlt } from "react-icons/hi";
+import axios from "axios";
 
 const getTopics = async () => {
   try {
     const { BASE_URL } = process.env;
-    const res = await fetch(`${BASE_URL}/api/topics`, {
+    const res = await axios(`${BASE_URL}/api/topics`, {
       // next: { revalidate: 10 }, // - At most once every 10 seconds
       cache: "no-store",
     });
 
-    if (!res.ok) {
+    if (!res) {
       throw new Error("Not be able to fetch topics!");
     }
 
-    return res.json(); //will return all the topics
+    return res.data;
   } catch (error) {
     console.error("Error in loading topics:", error);
   }

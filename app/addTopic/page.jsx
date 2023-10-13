@@ -1,5 +1,6 @@
 "use client";
 
+import axios from "axios";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -16,15 +17,12 @@ const Page = () => {
       return;
     }
     try {
-      const res = await fetch(`/api/topics`, {
-        method: "POST",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({ title, description }),
+      const res = await axios.post(`/api/topics`, {
+        title,
+        description,
       });
 
-      if (!res.ok) throw new Error("Failed to create a new topic!");
+      if (!res) throw new Error("Failed to create a new topic!");
 
       router.push("/");
     } catch (error) {
