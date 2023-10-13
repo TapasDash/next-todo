@@ -21,7 +21,7 @@ export async function GET() {
   return NextResponse.json({ topics });
 }
 
-export async function DELETE(request) {
+export async function DELETE() {
   const id = request.nextUrl.searchParams.get("id"); //eqv to req.query.id
   await connectDB();
   await Topic.findByIdAndDelete(id);

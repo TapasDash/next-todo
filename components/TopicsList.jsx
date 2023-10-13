@@ -5,7 +5,8 @@ import { HiPencilAlt } from "react-icons/hi";
 
 const getTopics = async () => {
   try {
-    const res = await fetch("http://localhost:3000/api/topics", {
+    const { BASE_URL } = process.env;
+    const res = await fetch(`${BASE_URL}/api/topics`, {
       // next: { revalidate: 10 }, // - At most once every 10 seconds
       cache: "no-store",
     });
